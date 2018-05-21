@@ -1,0 +1,11 @@
+language: bash
+
+services:
+    - docker
+
+install:
+    - docker build -t travis-docker .
+
+script:
+    - docker run travis-docker sh -c "yarn install && yarn test"
+
